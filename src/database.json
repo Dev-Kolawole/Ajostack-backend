@@ -1,0 +1,83 @@
+[
+  {
+    "event_type": "transaction.success",
+    "requestId": "f7521978-ca85-4cc5-8f56-4cf098a6e94c",
+    "data": {
+      "merchant": {
+        "walletId": "6a3be70b300577c72dd47ffb",
+        "walletBalance": 197.2,
+        "userId": "f0baf097-404c-4734-bbb4-5fbdaa0a91c8"
+      },
+      "terminal": {},
+      "tokenizedCardData": {
+        "tokenKey": "N/A",
+        "cardType": "N/A",
+        "tokenExpiryYear": "N/A",
+        "tokenExpiryMonth": "N/A",
+        "cardPan": "N/A"
+      },
+      "transaction": {
+        "fee": 1.4,
+        "type": "online_checkout",
+        "transactionId": "WEB-ONLINE_C-F0BAF-5c7f8338-b8d7-4610-8d54-72fd3a780954",
+        "responseCode": "",
+        "originatingFrom": "web",
+        "merchantTxRef": "100004260706104516164583869473",
+        "transactionAmount": 100,
+        "time": "2026-07-06T10:45:19Z"
+      },
+      "customer": {
+        "billerId": "9012098590",
+        "senderName": "AHMED OLAMIDE KOLAWOLE",
+        "productId": "305"
+      },
+      "order": {
+        "amount": 100,
+        "orderId": "f2a481aa-9d29-4129-bd61-c36c6c0eb1b1",
+        "cardType": "N/A",
+        "orderMetaData": {
+          "region": "NG"
+        },
+        "accountId": "f0baf097-404c-4734-bbb4-5fbdaa0a91c8",
+        "cardLast4Digits": "N/A",
+        "cardCurrency": "N/A",
+        "customerEmail": "ahmed@ajostack.com",
+        "customerId": "9012098590",
+        "isTokenizedCardPayment": "false",
+        "orderReference": "AJO-1783334646384",
+        "paymentMethod": "bank_transfer",
+        "callbackUrl": "https://ajostack.com/webhook",
+        "currency": "NGN"
+      }
+    },
+    "ajostack_id": "txn_1783334719815",
+    "recorded_at": "2026-07-06T10:45:19.815Z"
+  },
+  {
+    "event_type": "transaction.success",
+    "data": {
+      "amount": 15000,
+      "description": "Automated Monthly Thrift Deduction"
+    },
+    "ajostack_id": "txn_1783374456960",
+    "recorded_at": "2026-07-06T21:47:36.960Z"
+  },
+  {
+    "event_type": "transaction.success",
+    "data": {
+      "amount": 15000,
+      "description": "Automated Monthly Thrift Deduction"
+    },
+    "ajostack_id": "txn_1783374481692",
+    "recorded_at": "2026-07-06T21:48:01.692Z"
+  },
+  {
+    "event_type": "transaction.success",
+    "data": {
+      "amount": 15000,
+      "description": "Automated Monthly Thrift Deduction"
+    },
+    "ajostack_id": "txn_1783374484221",
+    "recorded_at": "2026-07-06T21:48:04.221Z"
+  }
+]

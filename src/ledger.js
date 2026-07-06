@@ -1,22 +1,47 @@
-// src/ledger.js
+const fs = require('fs');
+const path = require('path');
 
-// We preload the ledger with one successful transaction so you can build your React UI
-const transactions = [
-    {
-        event: "payment_success",
-        data: {
-            amount: 5000,
-            currency: "NGN",
-            customerEmail: "ahmed@example.com",
-            orderReference: "AJO-PRELOADED-TEST-001"
-        },
-        recordedAt: new Date().toISOString()
+// We create a persistent JSON database file in your src directory
+const dbPath = path.join(__dirname, 'database.json');
+
+// Boot Sequence: If the database doesn't exist yet, create it.
+if (!fs.existsSync(dbPath)) {
+    console.log("🛠️ Initializing persistent AjoStack ledger...");
+    fs.writeFileSync(dbPath, JSON.stringify([]));
+}
+
+const getLedger = () => {
+    try {
+        const rawData = fs.readFileSync(dbPath, 'utf8');
+        return JSON.parse(rawData);
+    } catch (error) {
+        console.error("Ledger Read Error:", error);
+        return [];
     }
-];
+};
+
+const addTransaction = (transaction) => {
+    try {
+        const currentLedger = getLedger();
+        
+        // Add a timestamp and unique ID if Nomba didn't provide one
+        const enrichedTransaction = {
+            ...transaction,
+            ajostack_id: `txn_${Date.now()}`,
+            recorded_at: new Date().toISOString()
+        };
+
+        currentLedger.push(enrichedTransaction);
+        
+        // Save it permanently to the hard drive
+        fs.writeFileSync(dbPath, JSON.stringify(currentLedger, null, 2));
+        console.log(`💾 Transaction permanently saved to database.json`);
+    } catch (error) {
+        console.error("Ledger Write Error:", error);
+    }
+};
 
 module.exports = {
-    addTransaction: (data) => {
-        transactions.push({ ...data, recordedAt: new Date().toISOString() });
-    },
-    getLedger: () => transactions
+    getLedger,
+    addTransaction
 };
