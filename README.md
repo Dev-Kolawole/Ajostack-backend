@@ -1,3 +1,16 @@
+## 🛑 JUDGING & EVALUATION GUIDE
+
+**Live URL:** [https://ajostack.vercel.app/]
+**Demo Video:** [https://www.loom.com/share/592c215685fb4ce3936283ee0d3e01f2]
+
+**How to Evaluate AjoStack:**
+AjoStack is deployed using the **Live Production Environment** for Nomba APIs. There are no login gates or signup flows to bypass—the multi-tenant dashboard is immediately accessible for evaluation.
+
+**Testing the Infrastructure:**
+1. **Virtual Accounts (Live Webhooks):** Click "Generate Virtual Account". This provisions a live, permanent Nomba account. You can send a real micro-transfer (e.g., ₦50) to this account to trigger the Nomba webhook and witness the automated React dashboard reconciliation.
+2. **AI Dunning Engine:** Click the "AI Reminder" button next to any failed charge on the dashboard. This triggers the Google Gemini 2.5 Flash model to read the specific failure payload and generate a contextualized WhatsApp recovery message.
+3. **Card Tokenization:** Click "Process Live Card Payment" to view the Nomba Live Checkout routing.
+
 # AjoStack 🏦
 **DevCareer x Nomba Hackathon 2026 - Finalist Submission**
 
